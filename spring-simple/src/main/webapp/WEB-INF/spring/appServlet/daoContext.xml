@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context 
+		https://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- <beans:bean id="fileDown" class="com.simple.www.util.DownloadUtil"/> -->
+
+	<beans:bean id="mDAO" class="com.simple.www.dao.MemberDAO" />
+	<beans:bean id="bDAO" class="com.simple.www.dao.BoardDAO" />
+	
+</beans:beans>
