@@ -29,17 +29,21 @@ public class FileService {
 //		int idx = path.indexOf("/WEB-INF");
 //		path = path.substring(0, idx) + "/resources/upload";
 //		System.out.println("srvc path : " + path);
-		 String rePath = spath.substring(0, spath.indexOf(".metadata"));
+		 String rePath = spath.substring(0, spath.indexOf("source"));
 		 
-		 rePath = rePath + "spring-simple\\src\\main\\webapp\\resources\\upload";
+		 rePath = rePath + "git\\spring\\spring-simple\\src\\main\\webapp\\resources\\upload";
 		 System.out.println("rePath" + rePath);
 		 // 먼저 클라이언트가 업로드한 원본이름을 알아낸다.
-		String oriName = upfile.getOriginalFilename();
+		String oriName = "";
+//		try {
+		oriName = upfile.getOriginalFilename();
+//		} catch(Exception e) {
+//		}
 		
+		System.out.println("응 ? 안나와야지 ?");
 		if(oriName == null || oriName.length() == 0) {
 			return "";
 		}
-		
 		// 이 라인이 실행된다는 의미는 업로드할 파일이 존재한다는 이야기
 		// 혹시 업로드할 파일하고 중복되는 이름의 파일이 이미 존재하는지 검사해서
 		// 있는 경우는 다른이름으로 저장
@@ -67,7 +71,8 @@ public class FileService {
 			fin = new FileInputStream(file);
 			bin = new BufferedInputStream(fin);
 			
-			ps = new PrintStream(file);
+			File file2 = new File(rePath, saveName);
+			ps = new PrintStream(file2);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

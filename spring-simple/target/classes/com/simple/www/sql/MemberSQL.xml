@@ -151,13 +151,18 @@
 			member
 	</select>
 	<insert id="join" parameterType="mVO">
-<!-- 	<selectKey keyProperty="mno" resultType="int" order="BEFORE">
-	
-	</selectKey> -->
+ 	<selectKey keyProperty="m_No" resultType="int" order="BEFORE">
+		SELECT 
+			NVL(MAX(m_no)+1, 1001) 
+		FROM 
+			member
+	</selectKey>
 		INSERT INTO
 			member
-		VALUES( (SELECT NVL(MAX(m_no)+1, 1001) FROM member)
-			, #{m_Id}, #{m_Pw}, #{m_Name}, #{m_Mail}, #{m_Tel}, sysdate, #{m_avt}, #{m_gen}
+		VALUES( 
+		<!-- (SELECT NVL(MAX(m_no)+1, 1001) FROM member), -->
+		 #{m_No}, #{m_Id}, #{m_Pw}, #{m_Name}, 
+		 #{m_Mail}, #{m_Tel}, sysdate, #{m_avt}, #{m_gen}
 		)
 	</insert>
 	

@@ -34,6 +34,7 @@ public class Member {
 	
 	@RequestMapping("loginProc.van")
 	public ModelAndView loginProc(HttpSession session, RedirectView rv, ModelAndView mv, MemberVO vo) {
+		System.out.println(vo.getM_Id());
 		int cnt = mDAO.loginProc(vo);
 		if (cnt > 0) {
 			// 이 경우는 아이디와 비밀번호가 일치하는 회원이 한명 있따는 이야기이므로
@@ -101,7 +102,6 @@ public class Member {
 			rv.setUrl("/www/member/join.van");
 		}
 		mv.setView(rv);
-		
 		return mv;
 	}
 	
@@ -145,7 +145,9 @@ public class Member {
 	
 	@RequestMapping("fileUp.van")
 	public void fileUp(MultipartFile upfile, HttpSession session) {
-		fileSrvc.singleUpProc(upfile, session);
+		try {
+			fileSrvc.singleUpProc(upfile, session);			
+		} catch (Exception e) {}
 	}
 
 	

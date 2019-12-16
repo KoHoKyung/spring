@@ -41,10 +41,10 @@
 			<button type="button" id="home" class="w3-left w3-indigo w3-button">메인화면</button>
 			<div class="w3-col w3-padding-16 w3-green w3-margin-top w3-pale-blue"><h1>로 그 인</h1>
 				<div class="w3-col w3-padding-16">
-					I D : <input type="text" id="id" name="id" style="width: 50%; height: 40px;" placeholder="아이디를 입력하세요">
+					I D : <input type="text" id="id" name="m_Id" style="width: 50%; height: 40px;" placeholder="아이디를 입력하세요">
 				</div>
 				<div class=" w3-padding-16">
-					PW : <input type="password" id="pw" name="pw" style="width: 50%; height: 40px;" placeholder="비밀번호를 입력하세요">
+					PW : <input type="password" id="pw" name="m_Pw" style="width: 50%; height: 40px;" placeholder="비밀번호를 입력하세요">
 				</div>
 
 				<button type="submit" id="btn" class="w3-col m6 w3-center w3-padding-16 w3-teal w3-margin-top w3-button" style="margin-left: 27%;">로그인</button>
